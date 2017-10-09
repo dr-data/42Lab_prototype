@@ -4,9 +4,13 @@ Meteor.publish('customers', function(skipCount) {
     return x >= 0;
   });
   check(skipCount, positiveIntegerCheck);
+
+  Counts.publish(this, 'customerCount', Customers.find(), { 
+    noReady: true
+  });
   
   return Customers.find({}, {
-    limit: 3, // records to show per page
+    limit: parseInt(Meteor.settings.public.recordsPerPage), // records to show per page
     skip: skipCount
   });
 });
