@@ -32,6 +32,8 @@ Template.listCustomers.helpers({
   }
 });
 
+
+// when click button in the add customer page, it back the list
 Template.listCustomers.events({
   'click #btnAddCustomer': function(e) {
     e.preventDefault();

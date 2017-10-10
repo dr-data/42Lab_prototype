@@ -3,7 +3,7 @@ Template.addCustomer.events({
     e.preventDefault();
 
     var customer = {
-      name: $(e.target).find('[name=firstName]').val(),
+      step: $(e.target).find('[name=step]').val(),
       surname: $(e.target).find('[name=lastName]').val(),
       email: $(e.target).find('[name=email]').val()
     };
