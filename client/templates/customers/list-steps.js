@@ -1,23 +1,23 @@
-Template.listCustomers.onCreated(function() {
+Template.listSteps.onCreated(function() {
   var template = this;
 
   template.autorun(function() {
     var skipCount = (currentPage() - 1) * Meteor.settings.public.recordsPerPage;
-    template.subscribe('customers', skipCount);
+    template.subscribe('steps', skipCount);
   });
 });
 
-Template.listCustomers.helpers({
-  customers: function() {
-    return Customers.find({}, {sort: {step: 1}}).fetch();
+Template.listSteps.helpers({
+  steps: function() {
+    return Steps.find({}, {sort: {step: 1}}).fetch();
   },
   prevPage: function() {
     var previousPage = currentPage() === 1 ? 1 : currentPage() - 1;
-    return Router.routes.listCustomers.path({page: previousPage});
+    return Router.routes.listSteps.path({page: previousPage});
   },
   nextPage: function() {
     var nextPage = hasMorePages() ? currentPage() + 1 : currentPage();
-    return Router.routes.listCustomers.path({page: nextPage});
+    return Router.routes.listSteps.path({page: nextPage});
   },
 
   //CSS class for next and previous button
@@ -34,7 +34,7 @@ Template.listCustomers.helpers({
 
 
 // when click button in the add customer page, it back the list
-Template.listCustomers.events({
+Template.listSteps.events({
   'click #btnAddStep': function(e) {
     e.preventDefault();
 
@@ -43,8 +43,8 @@ Template.listCustomers.events({
 });
 
 var hasMorePages = function() {
-  var totalCustomers = Counts.get('customerCount');
-  return currentPage() * parseInt(Meteor.settings.public.recordsPerPage) < totalCustomers;
+  var totalSteps = Counts.get('stepCount');
+  return currentPage() * parseInt(Meteor.settings.public.recordsPerPage) < totalSteps;
 }
 
 var currentPage = function() {

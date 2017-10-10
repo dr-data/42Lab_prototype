@@ -1,4 +1,4 @@
-<template name="listCustomers">
+<template name="listSteps">
 	<div class="row">
 		<div class="col-md-12">
 			<a class="btn btn-primary" id="btnAddStep">Add Step</a>
@@ -18,7 +18,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{{#each customers}}
+			{{#each steps}}
 				<tr>
 					<td>{{step}}</td>
 					<td><img src={{description}}> X {{description}}</td>
