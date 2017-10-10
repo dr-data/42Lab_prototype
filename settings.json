@@ -1,6 +1,6 @@
 {
   "public": {
-    "recordsPerPage" : "3"
+    "recordsPerPage" : "1"
   },
     "galaxy.meteor.com": {
      "env": {
