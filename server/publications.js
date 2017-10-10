@@ -5,7 +5,7 @@ Meteor.publish('customers', function(skipCount) {
   });
   check(skipCount, positiveIntegerCheck);
 
-  Counts.publish(this, 'customerCount', Customers.find(), { 
+  Counts.publish(this, 'customerCount', Customers.find({}, {sort: {step: 1}}), { 
     noReady: true
   });
   

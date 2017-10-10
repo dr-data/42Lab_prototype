@@ -1,7 +1,7 @@
 <template name="listCustomers">
 	<div class="row">
 		<div class="col-md-12">
-			<a class="btn btn-primary" id="btnAddCustomer">Add customer</a>
+			<a class="btn btn-primary" id="btnAddStep">Add Step</a>
 		</div>
 	</div>
 
@@ -13,7 +13,7 @@
 		<thead>
 			<tr>
 				<th>Step</th>
-				<th>Last name</th>
+				<th>Description</th>
 				<th>Email</th>
 			</tr>
 		</thead>
@@ -21,7 +21,7 @@
 			{{#each customers}}
 				<tr>
 					<td>{{step}}</td>
-					<td><img src={{surname}}> X {{surname}}</td>
+					<td><img src={{description}}> X {{description}}</td>
 					<td>{{email}}</td>
 				</tr>
 			{{/each}}

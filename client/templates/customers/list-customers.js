@@ -9,7 +9,7 @@ Template.listCustomers.onCreated(function() {
 
 Template.listCustomers.helpers({
   customers: function() {
-    return Customers.find();
+    return Customers.find({}, {sort: {step: 1}}).fetch();
   },
   prevPage: function() {
     var previousPage = currentPage() === 1 ? 1 : currentPage() - 1;
@@ -35,10 +35,10 @@ Template.listCustomers.helpers({
 
 // when click button in the add customer page, it back the list
 Template.listCustomers.events({
-  'click #btnAddCustomer': function(e) {
+  'click #btnAddStep': function(e) {
     e.preventDefault();
 
-    Router.go('addCustomer');
+    Router.go('addStep');
   }
 });
 

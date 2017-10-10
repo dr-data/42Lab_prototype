@@ -1,10 +1,10 @@
-Template.addCustomer.events({
+Template.addStep.events({
   'submit form': function(e) {
     e.preventDefault();
 
     var customer = {
-      step: $(e.target).find('[name=step]').val(),
-      surname: $(e.target).find('[name=lastName]').val(),
+      step: parseInt($(e.target).find('[name=step]').val()),
+      description: $(e.target).find('[name=description]').val(),
       email: $(e.target).find('[name=email]').val()
     };
 
