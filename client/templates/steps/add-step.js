@@ -5,7 +5,7 @@ Template.addStep.events({
     var step = {
       step: parseInt($(e.target).find('[name=step]').val()),
       description: $(e.target).find('[name=description]').val(),
-      email: $(e.target).find('[name=email]').val()
+      graph: $(e.target).find('[name=graph]').val()
     };
 
     Meteor.call('stepInsert', step, function(error, result) {    
