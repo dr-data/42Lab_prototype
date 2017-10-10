@@ -1,5 +1,10 @@
 {
   "public": {
     "recordsPerPage" : "3"
-  }
+  },
+    "galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://dbuser:456123@ds113785.mlab.com:13785/appdb"
+     }
+   }
 }

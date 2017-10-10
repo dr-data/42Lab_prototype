@@ -5,12 +5,13 @@ Meteor.publish('customers', function(skipCount) {
   });
   check(skipCount, positiveIntegerCheck);
 
-  Counts.publish(this, 'customerCount', Customers.find({}, {sort: {step: 1}}), { 
+  Counts.publish(this, 'customerCount', Customers.find(), { 
     noReady: true
   });
   
   return Customers.find({}, {
     limit: parseInt(Meteor.settings.public.recordsPerPage), // records to show per page
-    skip: skipCount
+    skip: skipCount,
+    sort: {step: 1} //sorting the list according to the step number
   });
 });
